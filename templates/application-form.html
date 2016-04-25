@@ -3,11 +3,21 @@
 <head>
     <title>Skills-Web</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
 <!-- This page needs a form that can capture data about the user's
 first name, last name, job title, and salary requirements. -->
 
+ <h1>Application for Applying</h1>
+ <form action="/application-response">
+        <p><label>First Name: <input type="text" name="firstname" placeholder="ex. Harry"></label></p>
+        <p><label>Last Name: <input type="text" name="lasname" placeholder="ex. Potter"></label></p>
+        <p><label>Salary Requirements: <input type="text" name="salary" placeholder="$0.00"></label></p>
+        <p><label>Job Title: <input type="text" name="jobtitle" placeholder="ex. Wizard"></label></p> 
+        <label><p><input type="checkbox"> Inform me about future job openings</p></label>
+        <br>
+        <input type="submit" id="submitbutton">
+    </form>       
 </body>
 </html>

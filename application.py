@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -7,13 +7,24 @@ app = Flask(__name__)
 def index_page():
     """Show an index page."""
 
-    return "<html><body>This is the homepage.</body></html>"
+    return render_template("index.html")
 
-    # Alternately, we could make this a Jinja template in `templates/`
-    # and return that result of rendering this, like:
-    #
-    # return render_template("index.html")
 
+@app.route("/application-form")
+def application_page():
+    """Application Form"""
+
+    return render_template("application-form.html")
+
+
+@app.route("/application-response")
+def response_page():
+    """Application Response"""
+
+    applicant = request.args.get("firstname")
+
+    return render_template("application-response.html",
+                            applicant=applicant)
 
 if __name__ == "__main__":
     app.run(debug=True)
